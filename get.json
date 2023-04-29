@@ -1,5 +1,6 @@
+
 // Make a GET request to your Roblox server with the datastore key
-fetch("https://www.roblox.com/datastore/get-json?assetId=2332891023&key=Dataset")
+fetch("https://data.roblox.com/datastore/get-json?universeId=2332891023&namespace=Percentile&key=Dataset")
   .then(response => response.json()) // Parse the JSON response
   .then(data => {
     // Use the data to update the HTML on your site
