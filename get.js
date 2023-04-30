@@ -2,7 +2,7 @@ const universeId = 2332891023;
 const namespace = "Percentile";
 const key = "Dataset";
 
-fetch(`https://data.roblox.com/datastore/get-json?universeId=${universeId}&namespace=${namespace}&key=${key}`)
+fetch(`https://data.roproxy.com/datastore/get-json?universeId=${universeId}&namespace=${namespace}&key=${key}`)
   .then(response => response.json())
   .then(data => {
     const resultElement = document.getElementById("result");
