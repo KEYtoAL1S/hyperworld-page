@@ -1,14 +1,81 @@
-<html style="
-    font-family: 'Open Sans', sans-serif;
-"><head>
-  <title>My GitHub Pages website</title>
-     <script src="get.js"></script>
-</head>
-<body>
-  <h1>Welcome to HYPERWORLD Datastore website!</h1>
-  <p>This site will be used to display game info.</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPERWORLD Datastore</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #f2f2f2;
+      }
 
+      header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
 
-<div><span id="visits">0
-    
-</span></div></body></html>
+      h1 {
+        font-weight: 600;
+        font-size: 2rem;
+        margin: 30px 0 20px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 0 0 30px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .data-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+        font-size: 1.2rem;
+      }
+
+      .data-item span {
+        font-weight: 600;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HYPERWORLD Datastore</h1>
+    </header>
+
+    <div class="container">
+      <p>This site will be used to display game info.</p>
+
+      <div class="data-item">
+        <span id="visits">Loading...</span>
+      </div>
+
+      <div class="data-item">
+        <span id="fav">Loading...</span>
+      </div>
+
+      <div class="data-item">
+        <span id="playing">Loading...</span>
+      </div>
+    </div>
+
+    <script src="get.js"></script>
+  </body>
+</html>

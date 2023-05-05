@@ -1,15 +1,16 @@
-fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get
+fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game data
   .then(response => response.json())
-  .then(data => {
+  .then(tab => {
     const resultElement_visit = document.getElementById("visits");
     const resultElement_favorite = document.getElementById("fav");
     const resultElement_playing = document.getElementById("playing");
     
-    resultElement_visit.innerHTML = `${data.visits}` + ' Visits';
-    resultElement_favorite.innerHTML = `${data.favoritedCount}` + ' Favorited'; 
-    resultElement_playing.innerHTML = `${data.playing}` + ' Online'
+    const gameData = tab.data[0]; // Assuming that we want to display data for the first game in the array
+    
+    resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + ' Visits';
+    resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + ' Favorited'; 
+    resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + ' Online';
   })
   .catch(error => {
     console.error(error);
   });
-
