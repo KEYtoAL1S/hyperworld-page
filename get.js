@@ -14,7 +14,7 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
     if (gameData.name.includes("[OUT]")) {
       resultElement_status.innerHTML = 'OUT OF SERVICE'; 
     } else {
-      resultElement_status.innerHTML = 'ONLINE';
+      resultElement_status.innerHTML = 'ACTIVE';
     }
     
 
