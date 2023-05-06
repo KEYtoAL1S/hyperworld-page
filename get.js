@@ -50,7 +50,7 @@ resultElement_visit.style.letterSpacing = "15px";
     }
     // Revert the text and styles of the result elements to their initial values
     resultElement_visit.style.fontSize = "45px";
-    resultElement_visit.style.letterSpacing = "-2px";
+    resultElement_visit.style.letterSpacing = "2px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
     resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + '';
@@ -67,7 +67,7 @@ resultElement_visit.style.letterSpacing = "15px";
       resultElement_playing.innerHTML = "Loading...";
       resultElement_status.innerHTML = "Loading...";
       resultElement_visit.style.fontSize = "0.8rem";
-      resultElement_visit.style.letterSpacing = "2px";
+      resultElement_visit.style.letterSpacing = "15px";
 
           const updatedGameData = tab.data[0];
           visitTween.to({ value: updatedGameData.visits }, 1000).start();
@@ -82,7 +82,7 @@ resultElement_visit.style.letterSpacing = "15px";
           
     // Revert the text and styles of the result elements to their initial values
     resultElement_visit.style.fontSize = "45px";
-    resultElement_visit.style.letterSpacing = "-2px";
+    resultElement_visit.style.letterSpacing = "2px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
     resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + '';
