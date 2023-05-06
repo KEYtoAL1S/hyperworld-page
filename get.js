@@ -19,7 +19,6 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
 resultElement_favorite.innerHTML = "Loading...";
 resultElement_playing.innerHTML = "Loading...";
 resultElement_status.innerHTML = "Loading...";
-resultElement_visit.style.letterSpacing = "15px";
 
     
 
@@ -57,7 +56,6 @@ resultElement_visit.style.letterSpacing = "15px";
       resultElement_status.style.background = '#00ff0073'
     }
     // Revert the text and styles of the result elements to their initial values
-    resultElement_visit.style.letterSpacing = "2px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
     resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + '';
@@ -73,7 +71,6 @@ resultElement_visit.style.letterSpacing = "15px";
       resultElement_favorite.innerHTML = "Loading...";
       resultElement_playing.innerHTML = "Loading...";
       resultElement_status.innerHTML = "Loading...";
-      resultElement_visit.style.letterSpacing = "15px";
 
           visit_prev = gameData.visits
           fav_prev = gameData.favoritedCount
@@ -93,7 +90,6 @@ resultElement_visit.style.letterSpacing = "15px";
           }
           
     // Revert the text and styles of the result elements to their initial values
-    resultElement_visit.style.letterSpacing = "2px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
     resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + '';
