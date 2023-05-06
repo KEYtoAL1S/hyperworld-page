@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://unpkg.com/@tweenjs/tween.js@^20.0.0/dist/tween.umd.js"></script>
+    <script defer src="get.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYPERWORLD Datastore</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap">
+
     <style>
       body {
         margin: 0;
+        transition-property: all!important;
+        transition-timing-function: cubic-bezier(0.4,0,0.2,1)!important;
+        transition-duration: 0.5s!important;
         padding: 0;
         font-family: 'Source Sans Pro', sans-serif;
         background-color: #f2f2f2;
@@ -42,16 +48,16 @@
       }
 
       .data-item {
-        /* display: flex; */
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 5px 0;
+        margin: 10px 0;
         font-size: 1.2rem;
+        flex-direction: column-reverse;
       }
 
       .data-item span {
-        font-weight: 600;
-        margin-right: 10px;
+        font-weight: 100;
       }
     </style>
   </head>
@@ -64,22 +70,21 @@
       <p>This site will be used to display game info.</p>
 
       <div class="data-item">
-        <span id="visits" style="font-size: 45px;">Loading...</span>Visits
+        Visits<span id="visits" style="font-size: 45px; letter-spacing: -2px;">Loading...</span>
       </div>
 
       <div class="data-item">
-        <span id="fav">Loading...</span>Favorites
+        Favorites<span id="fav" style="font-size: 35px; letter-spacing: -1px;">Loading...</span>
       </div>
 
       <div class="data-item">
-        <span id="playing">Loading...</span>Online
+        Online<span id="playing" style="font-size: 35px; letter-spacing: -1px;">Loading...</span>
       </div>
 
       <div class="data-item">
-        <span id="status">Loading...</span>
+        <span id="status" style="font-size: 35px; letter-spacing: -1px;">Loading...</span>
       </div>
     </div>
 
-    <script src="get.js"></script>
   </body>
 </html>
