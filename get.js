@@ -4,6 +4,7 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
     const resultElement_visit = document.getElementById("visits");
     const resultElement_favorite = document.getElementById("fav");
     const resultElement_playing = document.getElementById("playing");
+    const resultElement_like = document.getElementById("like");
     const resultElement_status = document.getElementById("status");
 
     let visit_prev = 0
@@ -47,6 +48,7 @@ resultElement_visit.style.letterSpacing = "15px";
     }
     animate();
     
+
     if (gameData.name.includes("[MAINTENANCE]")) {
       resultElement_status.innerHTML = 'IN MAINTENANCE'; 
       resultElement_status.style.background = '#ff000073'

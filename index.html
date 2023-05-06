@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYPERWORLD Universal Display</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans:Pro:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
     <style>
       body {
@@ -83,7 +83,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* margin: 10px 0; */
+        margin: 3px 0;
         flex-direction: row;
         background-position: center; /* center the image within the container */
          /* set a height for the container */
@@ -103,6 +103,13 @@
         color: black;
         background: rgb(87, 81, 81);
       }
+      
+		.bar {
+			background-color: rgb(0, 255, 76);
+			height: 2px;
+			width: 50%;
+			margin: 0 auto;
+		}
     </style>
   </head><body>
     <header>
@@ -128,13 +135,13 @@
     <div class="container-stats">
       <p>Game Status</p>
       <div class="data-item-bottom">
-        <span id="fav" style="font-weight: 600;letter-spacing: 2px;">Fetching...</span><span id="bottom">Favorites</span>
+        <span id="fav" style="font-weight: 400;letter-spacing: 2px;">Fetching...</span><span id="bottom">Favorites</span>
       </div>
 
       <div class="data-item-bottom">
-        <span id="playing" style="font-weight: 600;letter-spacing: 2px;">Fetching...</span><span id="bottom">Online</span>
+        <span id="playing" style="font-weight: 400;letter-spacing: 2px;">Fetching...</span><span id="bottom">Online</span>
       </div>
-
+      
       <div class="data-item-bottom">
         <span id="status" style="background: #6e6e6e73;padding: 5px 23px;letter-spacing: 2px;font-weight: 600;clip-path: polygon(10px 0%, calc(100% - 10px ) 0%, 100% 50%, calc(100% - 10px ) 100%, 10px 100%, 0% 50%);">PARSING</span><span id="bottom">Game Activity</span>
       </div>
