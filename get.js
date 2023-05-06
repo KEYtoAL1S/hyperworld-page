@@ -43,13 +43,15 @@ resultElement_visit.style.letterSpacing = "15px";
     }
     animate();
     
-    if (gameData.name.includes("[OUT]")) {
-      resultElement_status.innerHTML = 'OUT OF SERVICE'; 
+    if (gameData.name.includes("[MAINTENANCE]")) {
+      resultElement_status.innerHTML = 'IN MAINTENANCE'; 
+      resultElement_status.style.background = '#ff000073'
     } else {
-      resultElement_status.innerHTML = 'ACTIVE';
+      resultElement_status.innerHTML = 'ONLINE';
+      resultElement_status.style.background = '#00ff0073'
     }
     // Revert the text and styles of the result elements to their initial values
-    resultElement_visit.style.fontSize = "45px";
+    resultElement_visit.style.fontSize = "50px";
     resultElement_visit.style.letterSpacing = "2px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
@@ -74,10 +76,12 @@ resultElement_visit.style.letterSpacing = "15px";
           favoriteTween.to({ value: updatedGameData.favoritedCount }, 1000).start();
           playingTween.to({ value: updatedGameData.playing }, 1000).start();
     
-          if (updatedGameData.name.includes("[OUT]")) {
-            resultElement_status.innerHTML = 'OUT OF SERVICE'; 
+          if (updatedGameData.name.includes("[MAINTENANCE]")) {
+            resultElement_status.innerHTML = 'IN MAINTENANCE'; 
+            resultElement_status.style.background = '#ff000073'
           } else {
             resultElement_status.innerHTML = 'ONLINE';
+            resultElement_status.style.background = '#00ff0073'
           }
           
     // Revert the text and styles of the result elements to their initial values
@@ -86,7 +90,7 @@ resultElement_visit.style.letterSpacing = "15px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
     resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + '';
-    resultElement_status.innerHTML = resultElement_status.innerHTML === 'ONLINE' ? 'ONLINE' : 'OUT OF SERVICE';
+    resultElement_status.innerHTML = resultElement_status.innerHTML === 'ONLINE' ? 'ONLINE' : 'IN MAINTENANCE';
         })
         .catch(error => {
           console.error(error);

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HYPERWORLD Datastore</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
     <style>
       body {
@@ -15,15 +15,26 @@
         transition-timing-function: cubic-bezier(0.4,0,0.2,1)!important;
         transition-duration: 0.5s!important;
         padding: 0;
-        font-family: 'Source Sans Pro';
-        background-color: #f2f2f2;
+        font-family: Open Sans;
+        padding: 5em 5vw;
+        color: white;
+        background-color: #000d;
       }
 
+      
+
       header {
-        background-color: #007bff;
-        color: white;
-        padding: 10px;
+        position: relative;
+        background-color: #000000;
+        background-image: url(images/Screenshot_1814.png);
+        background-size: cover;
+        padding: 5vw 0vw;
+        margin: 0 -5vw;
+        /* margin-bottom: 2.5em; */
         text-align: center;
+        padding-bottom: calc(3vw + 50px);
+        overflow: hidden;
+        box-shadow: 0px 2px 4px #0004;
       }
 
       h1 {
@@ -42,11 +53,15 @@
       .container {
         margin: 0 auto;
         padding: 30px;
-        background-color: white;
-        background-image: url("images/Screenshot_1813.png");
-        background-size: cover; /* set the image to cover the entire container */
-        background-position: center; /* center the image within the container */
-        /*height: 500px; /* set a height for the container */
+      }
+
+      .container-stats {
+        margin: 0 auto;
+        padding: 0.75em;
+        float: left;
+        width: -webkit-fill-available;
+        background-color: #121518ee;
+        border-radius: 0.25em;
       }
 
       .data-item {
@@ -59,41 +74,63 @@
          /* set a height for the container */
         font-size: 1.2rem;
         font-weight: 900;
-        color: white;
+      }
+      
+      .data-item-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* margin: 10px 0; */
+        flex-direction: row;
+        background-position: center; /* center the image within the container */
+         /* set a height for the container */
+        font-size: 1.2rem;
+        font-weight: 100;
       }
 
       .data-item span {
-        font-weight: 800;
-        text-shadow: 2px 4px 3px black;
-        clip-path: polygon(2vw 0,calc(100% - 2vw) 0,100% 50%,calc(100% - 2vw) 100%,2vw 100%,0 50%);
+        font-weight: 100;
+        letter-spacing: 13px;
         padding: 0px 1em;
-        background: #000A;
+      }
+      
+      .bottom {
+        font-weight: 600;
+        padding: 0px 1em;
+        color: black;
+        background: rgb(87, 81, 81);
       }
     </style>
-  </head>
-  <body>
+  </head><body>
     <header>
       <h1>HYPERWORLD Datastore</h1>
+      <div class="data-item">
+        <p style="
+        letter-spacing: 3px;
+        font-weight: 100;
+    ">Concurrent Visits</p><span id="visits" style="
+    color: #FFF;
+    font-size: 7vw;
+    text-shadow: 0px 2px 4px #0008;
+    margin: 0;
+    font-weight: 900;
+">>3,854</span>
+      </div>
     </header>
     <div class="container">
-      <p>This site will be used to display game info.</p>
-
-      <div class="data-item">
-        Visits<span id="visits" style="font-size: 45px; letter-spacing: 5px;">Loading...</span>
-      </div>
-
-      <div class="data-item">
-        Favorites<span id="fav" style="font-size: 35px; letter-spacing: 2px;">Loading...</span>
-      </div>
-
-      <div class="data-item">
-        Online<span id="playing" style="font-size: 35px; letter-spacing: 2px;">Loading...</span>
-      </div>
-
-      <div class="data-item">
-        <span id="status" style="font-size: 25px; letter-spacing: 10px; font-weight: 100;">Loading...</span>
-      </div>
     </div>
+    <div class="container-stats">
+      <p>Game Status</p>
+      <div class="data-item-bottom">
+        <span id="fav" style="font-weight: 600;letter-spacing: 2px;">57</span><span id="bottom">Favorites</span>
+      </div>
 
-  </body>
+      <div class="data-item-bottom">
+        <span id="playing" style="font-weight: 600;letter-spacing: 2px;">0</span><span id="bottom">Online</span>
+      </div>
+
+      <div class="data-item-bottom">
+        <span id="status" style="background: #ff000073;padding: 5px 23px;letter-spacing: 2px;font-weight: 600;clip-path: polygon(10px 0%, calc(100% - 10px ) 0%, 100% 50%, calc(100% - 10px ) 100%, 10px 100%, 0% 50%);">OUT OF SERVICE</span><span id="bottom">Game Activity</span>
+      </div>
+    </div></body>
 </html>
