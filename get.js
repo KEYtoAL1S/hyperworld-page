@@ -61,7 +61,7 @@ resultElement_visit.style.letterSpacing = "15px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
     resultElement_playing.innerHTML = `${gameData.playing.toLocaleString()}` + '';
-    resultElement_status.innerHTML = resultElement_status.innerHTML === 'ONLINE' ? 'ONLINE' : 'OUT OF SERVICE';
+    resultElement_status.innerHTML = resultElement_status.innerHTML === 'ONLINE' ? 'ONLINE' : 'IN MAINTENANCE';
 
     // Update data every 60 seconds
     setInterval(() => {
