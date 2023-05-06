@@ -50,7 +50,6 @@ resultElement_visit.style.letterSpacing = "15px";
       resultElement_status.style.background = '#00ff0073'
     }
     // Revert the text and styles of the result elements to their initial values
-    resultElement_visit.style.fontSize = "50px";
     resultElement_visit.style.letterSpacing = "2px";
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
