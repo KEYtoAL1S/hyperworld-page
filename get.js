@@ -13,7 +13,7 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
 
     const gameData = tab.data[0]; // Assuming that we want to display data for the first game in the array
 
-    const tweentime = 2
+    const tweentime = 0.5
     
     resultElement_visit.innerHTML = "Loading...";
 resultElement_favorite.innerHTML = "Loading...";
