@@ -46,7 +46,7 @@ resultElement_visit.style.letterSpacing = "15px";
     if (gameData.name.includes("[OUT]")) {
       resultElement_status.innerHTML = 'OUT OF SERVICE'; 
     } else {
-      resultElement_status.innerHTML = 'ONLINE';
+      resultElement_status.innerHTML = 'ACTIVE';
     }
     // Revert the text and styles of the result elements to their initial values
     resultElement_visit.style.fontSize = "45px";
