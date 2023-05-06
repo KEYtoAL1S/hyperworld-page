@@ -5,9 +5,14 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
     const resultElement_favorite = document.getElementById("fav");
     const resultElement_playing = document.getElementById("playing");
     const resultElement_status = document.getElementById("status");
+
+    let visit_prev = 0
+    let fav_prev = 0
+    let playing_prev = 0
+
     const gameData = tab.data[0]; // Assuming that we want to display data for the first game in the array
 
-    const tweentime = 0.5
+    const tweentime = 2
     
     resultElement_visit.innerHTML = "Loading...";
 resultElement_favorite.innerHTML = "Loading...";
@@ -18,15 +23,15 @@ resultElement_visit.style.letterSpacing = "15px";
     
 
     // Create a tween for each number element
-    const visitTween = new TWEEN.Tween({ value: 0 })
+    const visitTween = new TWEEN.Tween({ value: visit_prev })
       .to({ value: gameData.visits }, tweentime*1e3)
       .onUpdate(({ value }) => resultElement_visit.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
     
-    const favoriteTween = new TWEEN.Tween({ value: 0 })
+    const favoriteTween = new TWEEN.Tween({ value: fav_prev })
       .to({ value: gameData.favoritedCount }, tweentime*1e3)
       .onUpdate(({ value }) => resultElement_favorite.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
     
-    const playingTween = new TWEEN.Tween({ value: 0 })
+    const playingTween = new TWEEN.Tween({ value: playing_prev })
       .to({ value: gameData.playing }, tweentime*1e3)
       .onUpdate(({ value }) => resultElement_playing.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
     
@@ -67,6 +72,10 @@ resultElement_visit.style.letterSpacing = "15px";
       resultElement_playing.innerHTML = "Loading...";
       resultElement_status.innerHTML = "Loading...";
       resultElement_visit.style.letterSpacing = "15px";
+
+          visit_prev = gameData.visits
+          fav_prev = gameData.favoritedCount
+          playing_prev = gameData.playing
 
           const updatedGameData = tab.data[0];
           visitTween.to({ value: updatedGameData.visits }, 1000).start();
