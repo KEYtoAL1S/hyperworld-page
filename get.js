@@ -1,3 +1,5 @@
+const tt = 60
+
 fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game data
   .then(response => response.json())
   .then(tab => {
@@ -96,7 +98,7 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
   .catch(error => {
     console.error(error);
   });
-}, 10*1e3);
+}, tt*1e3);
 
 })
 .catch(error => {
