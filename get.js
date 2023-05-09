@@ -1,4 +1,4 @@
-const tt = 60
+const tt = 10
 
 fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game data
   .then(response => response.json())
