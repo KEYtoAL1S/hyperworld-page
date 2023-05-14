@@ -24,15 +24,15 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
     resultElement_status.style.background = '#00000073'
     
     // Create a tween for each number element
-    const visitTween = new TWEEN.Tween({ value: visit_prev })
+    let visitTween = new TWEEN.Tween({ value: visit_prev })
       .to({ value: gameData.visits }, tweentime*1e3)
       .onUpdate(({ value }) => resultElement_visit.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
     
-    const favoriteTween = new TWEEN.Tween({ value: fav_prev })
+      let favoriteTween = new TWEEN.Tween({ value: fav_prev })
       .to({ value: gameData.favoritedCount }, tweentime*1e3)
       .onUpdate(({ value }) => resultElement_favorite.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
     
-    const playingTween = new TWEEN.Tween({ value: playing_prev })
+      let playingTween = new TWEEN.Tween({ value: playing_prev })
       .to({ value: gameData.playing }, tweentime*1e3)
       .onUpdate(({ value }) => resultElement_playing.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
     
@@ -72,9 +72,17 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
       resultElement_status.innerHTML = 'PARSING';
       resultElement_status.style.background = '#00000073'
       const updatedGameData = tab.data[0];
-      visit_prev = updatedGameData.visits
-      fav_prev = updatedGameData.favoritedCount
-      playing_prev = updatedGameData.playing
+      let visitTween = new TWEEN.Tween({ value: visit_prev })
+      .to({ value: gameData.visits }, tweentime*1e3)
+      .onUpdate(({ value }) => resultElement_visit.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
+    
+      let favoriteTween = new TWEEN.Tween({ value: fav_prev })
+      .to({ value: gameData.favoritedCount }, tweentime*1e3)
+      .onUpdate(({ value }) => resultElement_favorite.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
+    
+      let playingTween = new TWEEN.Tween({ value: playing_prev })
+      .to({ value: gameData.playing }, tweentime*1e3)
+      .onUpdate(({ value }) => resultElement_playing.innerHTML = `${Math.floor(value).toLocaleString()}` + '');
       visitTween.to({ value: updatedGameData.visits }, tweentime*1e3).start();
       favoriteTween.to({ value: updatedGameData.favoritedCount }, tweentime*1e3).start();
       playingTween.to({ value: updatedGameData.playing }, tweentime*1e3).start();
@@ -87,6 +95,9 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
         resultElement_status.style.background = '#00ff0073'
       }
       
+      visit_prev = updatedGameData.visits
+      fav_prev = updatedGameData.favoritedCount
+      playing_prev = updatedGameData.playing
     // Revert the text and styles of the result elements to their initial values
     resultElement_visit.innerHTML = `${gameData.visits.toLocaleString()}` + '';
     resultElement_favorite.innerHTML = `${gameData.favoritedCount.toLocaleString()}` + '';
