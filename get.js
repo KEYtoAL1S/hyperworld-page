@@ -1,3 +1,5 @@
+const tt = 10
+
 fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game data
   .then(response => response.json())
   .then(tab => {
@@ -9,6 +11,7 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
     const gameData = tab.data[0];
     const tweentime = 0.5
 
+    //to do make display for difference in values after update
     let visit_prev = gameData.visits;
     let fav_prev = gameData.favoritedCount;
     let playing_prev = gameData.playing;
@@ -107,7 +110,7 @@ fetch(`https://games.roproxy.com/v1/games?universeIds=2332891023`) // get game d
   .catch(error => {
     console.error(error);
   });
-}, 10*1e3);
+}, tt*1e3);
 
 })
 .catch(error => {
